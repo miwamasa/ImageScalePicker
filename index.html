@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イメージスケール座標・色コード管理アプリ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-scale-panel">
+            <div class="coordinate-display" id="coordinateDisplay">
+                X: 0.000, Y: 0.000
+            </div>
+            <div class="image-scale-container">
+                <canvas id="imageScaleCanvas" width="800" height="600"></canvas>
+                <div class="axis-labels">
+                    <div class="x-axis-label left">WARM(-1)</div>
+                    <div class="x-axis-label right">COOL(1)</div>
+                    <div class="y-axis-label top">SOFT(1)</div>
+                    <div class="y-axis-label bottom">HARD(-1)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="data-panel">
+            <h2>データ管理テーブル</h2>
+            <div class="table-container">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>イメージワード</th>
+                            <th>WARM/COOL軸</th>
+                            <th>SOFT/HARD軸</th>
+                            <th>色コード(X,Y,Z)</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataTableBody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="controls">
+                <button id="addButton" class="btn btn-primary">新規追加</button>
+                <button id="downloadCsvButton" class="btn btn-primary">CSV出力</button>
+                <button id="clearAllButton" class="btn btn-secondary">全削除</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
